@@ -1,0 +1,17 @@
+{
+    "name": "sample-electron-ts",
+    "version": "1.0.0",
+    "description": "Sample Electron.js application with TypeScript.",
+    "main": "./App.js",
+    "scripts": {
+        "build-ts": "tsc",
+        "start": "npm run build-ts && copy .\\package.json .\\dist\\app\\ > NUL && electron ./dist/app/",
+        "watch-ts": "tsc -w"
+    },
+    "author": "Mahyar Mirrashed",
+    "license": "MIT",
+    "dependencies": {
+        "electron": "^11.2.3",
+        "typescript": "^4.1.5"
+    }
+}
