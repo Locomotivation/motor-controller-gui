@@ -1,6 +1,6 @@
 import { App, BrowserWindow, ipcMain } from "electron";
 import { IpcChannelInterface } from "@shared/IpcChannelInterface";
-const path = require("path");
+import { join } from "path";
 
 export default class Main {
     private static mainWindow: BrowserWindow;
@@ -37,10 +37,10 @@ export default class Main {
                 contextIsolation: true,
                 enableRemoteModule: false,
                 nodeIntegration: false,
-                preload: path.join(__dirname, "Preload.js"),
+                preload: join(__dirname, "Preload.js"),
             },
         });
-        Main.mainWindow.loadFile(path.join(process.cwd(), "index.html"));
+        Main.mainWindow.loadFile(join(process.cwd(), "index.html"));
         Main.mainWindow.on("closed", Main.onClose);
     }
 
